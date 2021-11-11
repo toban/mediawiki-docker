@@ -27,6 +27,7 @@ jobs:
         uses: crazy-max/ghaction-docker-meta@v3.6.0
         with:
           images: ghcr.io/${{ github.repository }}
+          tags: type=raw,value=${{ matrix.version }}-${{ matrix.type }}
       -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v1.2.0
